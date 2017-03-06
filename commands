@@ -1,0 +1,108 @@
+FILE SYSTEMS
+- Concepts
+  / : absolute path
+  ~ : relative to user virtual directory
+  . : relative to current directory
+  .. : relative to parent directory
+
+- Commands
+  mkdir <dir_name> : make directories
+    Ex: $ mkdir myApp
+
+  cd <dir_path> : change directory
+    Ex: $ cd ~/Downloads
+
+  pwd : print name of current/working directory
+
+  ls : list directory contents
+    -F or --clasify
+    -a or --all
+    -R or --recursive
+    -l : use a long listing format
+    -l <filter> : filter listing output
+      Ex: ls -l *Linux*
+
+  touch : change file timestamps (usually used to create a file)
+    Ex: $ touch index.js
+
+  cp <source> <destination> : copy files and directories
+    Ex: $ cp index.js dist/index.js
+
+  ln : make links between files
+    ln <target> <link_file> : make hard links
+      Ex: ln index.js index-hard-link.js
+    ln -s <target> <link_file> : make symbolic links instead of hard link
+      Ex: ln -s index.js index-symbolic-link.js
+
+  mv : move (rename) files
+    Ex: $ mv index.html build/main.html
+
+  rm : remove files or directories
+    rm <item>
+      Ex: $ rm main.css
+    rm -r <directory> : remove directories and their contents recursively
+      Ex: $ rm fullDir
+
+  file <item> : determine file type
+    Ex: $ file index.js
+
+  cat <file> : concatenate files and print on the standard output (usually used to view small file content)
+    Ex: $ cat index.js
+
+  more <file> : file perusal filter for crt viewing (view file with paging)
+    Ex: $ more index.js
+
+  less <file> : opposite of more (used to view file with scroll up, scroll down, page up, page down)
+    Ex: $ less index.js
+
+  tail : output the last part of files
+    tail <file> : print the last 10 lines
+      Ex: $ tail index.js
+    tail -n <number> <file> : output the last <number> lines
+      Ex: $ tail -n 20 index.js
+      or  $ tail -20 index.js
+    tail -f <file> : output appended data as the file grows
+      Ex: $ tail -f index.js
+
+  head : output the first part of files
+    head <file> : print the first 10 lines
+      Ex: $ head index.js
+    head -n <number> <file> : print the first <number> lines
+      Ex: $ head -n 20 index.js
+      or  $ head -20 index.js
+
+PROCESSES
+- Signals
+  1 HUP Hangs up
+  2 INT Interrupts
+  3 QUIT Stops running
+  9 KILL Unconditionally terminates
+  11 SEGV Produces segment violation
+  15 TERM Terminates if possible
+  17 STOP Stops unconditionally, but doesn’t terminate
+  18 TSTP Stops or pauses, but continues to run in background
+  19 CONT Resumes execution after STOP or TSTP
+
+- Commands
+  ps : report a snapshot of the current processes
+    -l : long format
+    -e : Select all processes
+    -f : Do full-format listing
+
+  kill <pid> : send a signal to a process
+    kill <pid> : send the default signal TERM to a process
+      Ex: kill 2255
+    kill -s <signal> <pid> : specify the signal to be sent
+      Ex: kill -s HUP 2255
+
+  killall <process_name> : kill processes by name
+    Ex: killall slac*
+
+DISK SPACE
+- Commands
+  df : report file system disk space usage
+    -h, --human-readable : print sizes in powers of 1024 (e.g., 1023M)
+  du : estimate file space usage
+    -c, --total : produce a grand total
+    -h, --human-readable : sizes in human readable format (e.g., 1K 234M 2G)
+    -S, --separate-dirs : directories do not include size of subdirectories 
