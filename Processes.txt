@@ -1,0 +1,83 @@
+Signals:
+  1 HUP Hangs up
+  2 INT Interrupts
+  3 QUIT Stops running
+  9 KILL Unconditionally terminates
+  11 SEGV Produces segment violation
+  15 TERM Terminates if possible
+  17 STOP Stops unconditionally, but doesn’t terminate
+  18 TSTP Stops or pauses, but continues to run in background
+  19 CONT Resumes execution after STOP or TSTP
+
+
+
+ps - report a snapshot of the current processes.
+SYNOPSIS
+       ps [options]
+OPTIONS
+       -A     Select all processes.  Identical to -e.
+
+       -e     Select all processes.  Identical to -A.
+
+       -l     Long format.  The -y option is often useful with this.
+
+       -y     Do not show flags; show rss in place of addr.  This option can be used with -l.
+
+       -f     Do full-format listing.
+EXAMPLES
+       To see every process on the system using standard syntax:
+          ps -e
+          ps -ef
+          ps -eF
+          ps -ely
+
+       To see every process on the system using BSD syntax:
+          ps ax
+          ps axu
+
+       To print a process tree:
+          ps -ejH
+          ps axjf
+
+       To get info about threads:
+          ps -eLf
+          ps axms
+
+
+
+top - display Linux processes
+SYNOPSIS
+       top -hv|-bcHiOSs -d secs -n max -u|U user -p pid -o fld -w [cols]
+COMMANDS
+       f or F: Fields Management
+
+
+
+kill - send a signal to a process
+SYNOPSIS
+       kill [options] <pid> [...]
+OPTIONS
+       -<signal>
+       -s <signal>
+       --signal <signal>
+              Specify  the signal to be sent.  The signal can be specified
+              by using  name  or  number.   The  behavior  of  signals  is
+              explained in signal(7) manual page.
+EXAMPLES:
+       kill -9 -1
+              Kill all processes you can kill.
+
+       kill 123 543 2341 3453
+              Send the default signal, SIGTERM, to all those processes.
+
+       kill -s HUP 2255
+              Send the hangs up signal, SIGHUP, to process 2255
+
+
+
+killall - kill processes by name
+SYNOPSIS
+       killall [options] <name> [...]
+EXAMPLES:
+       killall slac*
+

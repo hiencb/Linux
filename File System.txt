@@ -1,0 +1,127 @@
+Paths:
+  / : absolute path
+  ~ : relative to user virtual directory
+  . : relative to current directory
+  .. : relative to parent directory
+
+
+
+mkdir - make directories
+SYNOPSIS
+       mkdir [OPTION]... DIRECTORY...
+EXAMPLES
+       mkdir Folder1 Folder2 Folder3
+
+
+
+cd - change the shell working directory
+SYNOPSIS
+       cd [-L|[-P [-e]] [-@]] [dir]
+EXAMPLES
+       cd
+       cd /bin/
+       cd ~/Downloads
+
+
+
+pwd - print name of current/working directory
+SYNOPSIS
+       pwd [OPTION]...
+
+
+
+ls : list directory contents
+       -a, --all
+              do not ignore entries starting with .
+
+       -F, --classify
+              append indicator (one of */=>@|) to entries
+
+       -R, --recursive
+              list subdirectories recursively
+
+       -l     use a long listing format
+
+
+ls - list directory contents
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+OPTIONS
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       -h, --human-readable
+              with -l and/or -s, print human readable sizes (e.g., 1K 234M
+              2G)
+
+       -l     use a long listing format
+
+       -s, --size
+              print the allocated size of each file, in blocks
+EXAMPLE
+       ls -l *Linux*
+       ls -sh
+
+
+
+touch : change file timestamps (usually used to create a file)
+  Ex: $ touch index.js
+
+
+cp <source> <destination> : copy files and directories
+  Ex: $ cp index.js dist/index.js
+
+
+ln : make links between files
+  ln <target> <link_file> : make hard links
+    Ex: ln index.js index-hard-link.js
+  ln -s <target> <link_file> : make symbolic links instead of hard link
+    Ex: ln -s index.js index-symbolic-link.js
+
+
+mv : move (rename) files
+  Ex: $ mv index.html build/main.html
+
+
+rm : remove files or directories
+  rm <item>
+    Ex: $ rm main.css
+  rm -r <directory> : remove directories and their contents recursively
+    Ex: $ rm fullDir
+
+
+file <item> : determine file type
+  Ex: $ file index.js
+
+
+cat <file> : concatenate files and print on the standard output (usually used to view small file content)
+  Ex: $ cat index.js
+
+
+more <file> : file perusal filter for crt viewing (view file with paging)
+  Ex: $ more index.js
+
+
+less <file> : opposite of more (used to view file with scroll up, scroll down, page up, page down)
+  Ex: $ less index.js
+
+
+tail : output the last part of files
+  tail <file> : print the last 10 lines
+    Ex: $ tail index.js
+  tail -n <number> <file> : output the last <number> lines
+    Ex: $ tail -n 20 index.js
+    or  $ tail -20 index.js
+  tail -f <file> : output appended data as the file grows
+    Ex: $ tail -f index.js
+
+
+head : output the first part of files
+  head <file> : print the first 10 lines
+    Ex: $ head index.js
+  head -n <number> <file> : print the first <number> lines
+    Ex: $ head -n 20 index.js
+    or  $ head -20 index.js

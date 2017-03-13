@@ -71,32 +71,6 @@ FILE SYSTEMS
       Ex: $ head -n 20 index.js
       or  $ head -20 index.js
 
-PROCESSES
-- Signals
-  1 HUP Hangs up
-  2 INT Interrupts
-  3 QUIT Stops running
-  9 KILL Unconditionally terminates
-  11 SEGV Produces segment violation
-  15 TERM Terminates if possible
-  17 STOP Stops unconditionally, but doesn’t terminate
-  18 TSTP Stops or pauses, but continues to run in background
-  19 CONT Resumes execution after STOP or TSTP
-
-- Commands
-  ps : report a snapshot of the current processes
-    -l : long format
-    -e : Select all processes
-    -f : Do full-format listing
-
-  kill <pid> : send a signal to a process
-    kill <pid> : send the default signal TERM to a process
-      Ex: kill 2255
-    kill -s <signal> <pid> : specify the signal to be sent
-      Ex: kill -s HUP 2255
-
-  killall <process_name> : kill processes by name
-    Ex: killall slac*
 
 DISK SPACE
 - Commands

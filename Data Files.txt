@@ -1,0 +1,103 @@
+sort <file> - sort lines of text files
+       -b, --ignore-leading-blanks
+              ignore leading blanks
+
+       -d, --dictionary-order
+              consider only blanks and alphanumeric characters
+
+       -f, --ignore-case
+              fold lower case to upper case characters
+
+       -g, --general-numeric-sort
+              compare according to general numerical value
+
+       -M, --month-sort
+              compare (unknown) < 'JAN' < ... < 'DEC'
+
+       -h, --human-numeric-sort
+              compare human readable numbers (e.g., 2K 1G)
+
+       -n, --numeric-sort
+              compare according to string numerical value
+
+       -r, --reverse
+              reverse the result of comparisons
+
+       -o, --output=FILE
+              write result to FILE instead of standard output
+
+  Ex:
+    sort -M months.txt
+    du | sort -n
+
+
+grep - print lines matching a pattern
+SYNOPSIS
+       grep [OPTIONS] PATTERN [FILE...]
+       grep [OPTIONS] [-e PATTERN]...  [-f FILE]...  [FILE...]
+OPTIONS
+       -i, --ignore-case
+              Ignore  case  distinctions in both the PATTERN and the input
+              files.
+
+       -v, --invert-match
+              Invert the sense of matching, to select non-matching lines.
+
+       -c, --count
+              Suppress  normal  output;  instead print a count of matching
+              lines for each input  file.   With  the  -v,  --invert-match
+              option (see below), count non-matching lines.
+
+       -n, --line-number
+              Prefix  each  line  of  output  with the 1-based line number
+              within its input file.
+
+       -e PATTERN, --regexp=PATTERN
+              Use PATTERN as the pattern.  If this option is used multiple
+              times or is combined with the -f (--file) option, search for
+              all  patterns  given.   This option can be used to protect a
+              pattern beginning with “-”.
+
+  Ex:
+    grep -n algorithms Tests/content.txt
+    grep -e you -e her content.txt
+    ls | grep nexmo
+
+
+
+gzip - compress or expand files
+SYNOPSIS
+       gzip [ -acdfhklLnNrtvV19 ] [--rsyncable] [-S suffix] [ name ...  ]
+OPTIONS
+       -d --decompress --uncompress
+              Decompress.
+
+       -k --keep
+              Keep (don't delete) input files during compression or decom‐
+              pression.
+
+       -l --list
+              For each compressed file, list the following fields:
+
+                  compressed size: size of the compressed file
+                  uncompressed size: size of the uncompressed file
+                  ratio: compression ratio (0.0% if unknown)
+                  uncompressed_name: name of the uncompressed file
+
+       -v --verbose
+              Verbose. Display the name and percentage reduction for  each
+              file compressed or decompressed.
+
+       -# --fast --best
+              Regulate the speed of compression using the specified  digit
+              #,  where  -1  or  --fast  indicates the fastest compression
+              method (less compression) and -9  or  --best  indicates  the
+              slowest  compression method (best compression).  The default
+              compression level is -6 (that is, biased towards  high  com‐
+              pression at expense of speed).
+
+  Ex:
+    gzip nexmo*
+    gzip -lv nexmo*
+    gzip -d nexmo*
+    
