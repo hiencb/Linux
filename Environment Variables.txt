@@ -1,0 +1,54 @@
+env - run a program in a modified environment
+SYNOPSIS
+       env [OPTION]... [-] [NAME=VALUE]... [COMMAND [ARG]...]
+OPTIONS
+       -i, --ignore-environment
+              start with an empty environment
+
+       -u, --unset=NAME
+              remove variable from the environment
+EXAMPLES
+       env
+       env NODE_ENV=PRODUCTION coffee test.coffee
+
+
+
+printenv - print all or part of environment
+SYNOPSIS
+       printenv [OPTION]... [VARIABLE]...
+EXAMPLES
+       printenv
+       printenv HOME
+
+
+
+set - Set or unset values of shell options and positional parameters.
+SYNOPSIS
+       set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
+
+
+
+export - Set export attribute for shell variables.
+SYNOPSIS
+       export [-fn] [name[=value] ...] or export -p
+OPTIONS
+      -p	display a list of all exported variables and functions
+EXAMPLES
+      my_variable="My Variable"; export my_variable
+      export -p
+
+
+
+unset - Unset values and attributes of shell variables and functions.
+SYNOPSIS
+      unset [-f] [-v] [-n] [name ...]
+EXAMPLES
+      unset my_variable
+
+
+
+MAKING ENVIRONMENT VARIABLES PERSISTENT
+On most distributions, the best place to store an individual user’s persistent bash shell variables is in the $HOME/.bashrc file. This is true for all shell process types. However, if the BASH_ENV variable is set, keep in mind that unless it points to $HOME/.bashrc, you may need to store a user’s variables for non-interactive shell types elsewhere.
+
+$HOME/.bashrc
+alias pycharm='/home/fimplus/App/PyCharm/pycharm-145.597.11/bin/pycharm.sh'

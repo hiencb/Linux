@@ -1,9 +1,17 @@
-df : report file system disk space usage
+df - report file system disk space usage
+SYNOPSIS
+       df [OPTION]... [FILE]...
+OPTIONS
        -h, --human-readable
               print sizes in powers of 1024 (e.g., 1023M)
 
 
-du : estimate file space usage
+
+du - estimate file space usage
+SYNOPSIS
+       du [OPTION]... [FILE]...
+       du [OPTION]... --files0-from=F
+OPTIONS
        -a, --all
               write counts for all files, not just directories
 

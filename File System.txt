@@ -67,19 +67,44 @@ EXAMPLE
 
 
 
-touch : change file timestamps (usually used to create a file)
-  Ex: $ touch index.js
+touch - change file timestamps (usually used to create a file)
+SYNOPSIS
+       touch [OPTION]... FILE...
+EXAMPLES
+       touch index.js
 
 
-cp <source> <destination> : copy files and directories
-  Ex: $ cp index.js dist/index.js
+
+cp - copy files and directories
+SYNOPSIS
+       cp [OPTION]... [-T] SOURCE DEST
+       cp [OPTION]... SOURCE... DIRECTORY
+       cp [OPTION]... -t DIRECTORY SOURCE...
+EXAMPLES
+       cp index.js dist/index.js
 
 
-ln : make links between files
-  ln <target> <link_file> : make hard links
-    Ex: ln index.js index-hard-link.js
-  ln -s <target> <link_file> : make symbolic links instead of hard link
-    Ex: ln -s index.js index-symbolic-link.js
+ln - make links between files
+SYNOPSIS
+       ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+       ln [OPTION]... TARGET                  (2nd form)
+       ln [OPTION]... TARGET... DIRECTORY     (3rd form)
+       ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
+OPTIONS
+       -f, --force
+              remove existing destination files
+
+       -P, --physical
+              make hard links directly to symbolic links
+
+       -s, --symbolic
+              make symbolic links instead of hard links
+EXAMPLES
+       Make hard links
+              ln index.js index-hard-link.js
+       Make symbolic links instead of hard link
+              ln -s index.js index-symbolic-link.js
+
 
 
 mv : move (rename) files

@@ -1,0 +1,105 @@
+useradd - create a new user or update default new user information
+SYNOPSIS
+       useradd [options] LOGIN
+
+       useradd -D
+
+       useradd -D [options]
+OPTIONS
+       -b, --base-dir BASE_DIR
+           The default base directory for the system if -d HOME_DIR is not
+           specified.
+
+       -d, --home-dir HOME_DIR
+           The new user will be created using HOME_DIR as the value for the
+           user's login directory.
+
+       -f, --inactive INACTIVE
+           The number of days after a password expires until the account is
+           permanently disabled.
+
+       -g, --gid GROUP
+           The group name or number of the user's initial login group.
+
+       -G, --groups GROUP1[,GROUP2,...[,GROUPN]]]
+           A list of supplementary groups which the user is also a member of.
+
+       -m, --create-home
+           Create the user's home directory if it does not exist.
+
+       -s, --shell SHELL
+           The name of the user's login shell.
+EXAMPLES
+       sudo useradd -m TestAccount
+
+
+
+userdel - delete a user account and related files
+SYNOPSIS
+       userdel [options] LOGIN
+OPTIONS
+       -r, --remove
+           Files in the user's home directory will be removed along with the home directory itself and the user's mail spool.
+EXAMPLES
+       sudo userdel -r Test
+
+
+
+usermod - modify a user account
+SYNOPSIS
+       usermod [options] LOGIN
+OPTIONS
+       -d, --home HOME_DIR
+           The user's new login directory.
+
+       -g, --gid GROUP
+           The group name or number of the user's new initial login group.
+
+       -G, --groups GROUP1[,GROUP2,...[,GROUPN]]]
+           A list of supplementary groups which the user is also a member of.
+
+       -L, --lock
+           Lock a user's password.
+
+       -U, --unlock
+           Unlock a user's password.
+EXAMPLES
+       sudo usermod -L TestAccount
+       sudo usermod -U TestAccount
+
+
+
+passwd - change user password
+SYNOPSIS
+       passwd [options] [LOGIN]
+OPTIONS
+       -a, --all
+           This option can be used only with -S and causes show status for all
+           users.
+
+       -d, --delete
+           Delete a user's password (make it empty). This is a quick way to
+           disable a password for an account. It will set the named account
+           passwordless.
+
+       -e, --expire
+           Immediately expire an account's password. This in effect can force
+           a user to change his/her password at the user's next login.
+
+       -l, --lock
+           Lock the password of the named account.
+
+       -u, --unlock
+           Unlock the password of the named account.
+EXAMPLES
+       sudo passwd TestAccount
+
+
+
+chpasswd - update passwords in batch mode
+SYNOPSIS
+       chpasswd [options]
+EXAMPLES
+       $ sudo chpasswd 
+       TestAccount:123
+       ^C

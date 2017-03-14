@@ -63,7 +63,7 @@ OPTIONS
               Specify  the signal to be sent.  The signal can be specified
               by using  name  or  number.   The  behavior  of  signals  is
               explained in signal(7) manual page.
-EXAMPLES:
+EXAMPLES
        kill -9 -1
               Kill all processes you can kill.
 
@@ -78,6 +78,6 @@ EXAMPLES:
 killall - kill processes by name
 SYNOPSIS
        killall [options] <name> [...]
-EXAMPLES:
+EXAMPLES
        killall slac*
 
