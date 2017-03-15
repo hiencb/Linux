@@ -66,6 +66,7 @@ OPTIONS
 EXAMPLES
        sudo usermod -L TestAccount
        sudo usermod -U TestAccount
+       sudo usermod -G TestGroup TestAccount
 
 
 

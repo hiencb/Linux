@@ -1,0 +1,204 @@
+Paths:
+  / : absolute path
+  ~ : relative to user virtual directory
+  . : relative to current directory
+  .. : relative to parent directory
+
+
+
+mkdir - make directories
+SYNOPSIS
+       mkdir [OPTION]... DIRECTORY...
+EXAMPLES
+       mkdir Folder1 Folder2 Folder3
+
+
+
+cd - change the shell working directory
+SYNOPSIS
+       cd [-L|[-P [-e]] [-@]] [dir]
+EXAMPLES
+       cd
+       cd /bin/
+       cd ~/Downloads
+
+
+
+pwd - print name of current/working directory
+SYNOPSIS
+       pwd [OPTION]...
+
+
+
+ls - list directory contents
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+OPTIONS
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       -h, --human-readable
+              with -l and/or -s, print human readable sizes (e.g., 1K 234M
+              2G)
+
+       -l     use a long listing format
+
+       -s, --size
+              print the allocated size of each file, in blocks
+EXAMPLE
+       ls -l *Linux*
+       ls -sh
+
+
+
+touch - change file timestamps (usually used to create a file)
+SYNOPSIS
+       touch [OPTION]... FILE...
+EXAMPLES
+       touch index.js
+
+
+
+cp - copy files and directories
+SYNOPSIS
+       cp [OPTION]... [-T] SOURCE DEST
+       cp [OPTION]... SOURCE... DIRECTORY
+       cp [OPTION]... -t DIRECTORY SOURCE...
+EXAMPLES
+       cp index.js dist/index.js
+
+
+ln - make links between files
+SYNOPSIS
+       ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+       ln [OPTION]... TARGET                  (2nd form)
+       ln [OPTION]... TARGET... DIRECTORY     (3rd form)
+       ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
+OPTIONS
+       -f, --force
+              remove existing destination files
+
+       -P, --physical
+              make hard links directly to symbolic links
+
+       -s, --symbolic
+              make symbolic links instead of hard links
+EXAMPLES
+       Make hard links
+              ln index.js index-hard-link.js
+       Make symbolic links instead of hard link
+              ln -s index.js index-symbolic-link.js
+
+
+
+mv - move (rename) files
+SYNOPSIS
+       mv [OPTION]... [-T] SOURCE DEST
+       mv [OPTION]... SOURCE... DIRECTORY
+       mv [OPTION]... -t DIRECTORY SOURCE...
+OPTIONS
+       -v, --verbose
+              explain what is being done
+EXAMPLES
+       mv index.html build/main.html
+
+
+
+rm - remove files or directories
+SYNOPSIS
+       rm [OPTION]... [FILE]...
+OPTIONS
+       -r, -R, --recursive
+              remove directories and their contents recursively
+
+       -d, --dir
+              remove empty directories
+
+       -v, --verbose
+              explain what is being done
+EXAMPLES
+       rm main.css
+       rm fullDir
+
+
+
+file — determine file type
+SYNOPSIS
+     file [-bcEhiklLNnprsvzZ0] [--apple] [--extension] [--mime-encoding]
+          [--mime-type] [-e testname] [-F separator] [-f namefile]
+          [-m magicfiles] [-P name=value] file ...
+     file -C [-m magicfiles]
+     file [--help]
+EXAMPLES
+     file index.js
+
+
+
+cat - concatenate files and print on the standard output (usually used to view small file content)
+SYNOPSIS
+       cat [OPTION]... [FILE]...
+EXAMPLES
+       cat index.js
+
+
+
+more - file perusal filter for crt viewing (view file with paging)
+SYNOPSIS
+       more [options] file...
+EXAMPLES
+       more index.js
+
+
+
+less - opposite of more (used to view file with scroll up, scroll down, page up, page down)
+SYNOPSIS
+       less -?
+       less --help
+       less -V
+       less --version
+       less [-[+]aABcCdeEfFgGiIJKLmMnNqQrRsSuUVwWX~]
+            [-b space] [-h lines] [-j line] [-k keyfile]
+            [-{oO} logfile] [-p pattern] [-P prompt] [-t tag]
+            [-T tagsfile] [-x tab,...] [-y lines] [-[z] lines]
+            [-# shift] [+[+]cmd] [--] [filename]...
+EXAMPLES
+       less index.js
+
+
+tail - output the last part of files
+SYNOPSIS
+       tail [OPTION]... [FILE]...
+OPTIONS
+       -c, --bytes=[+]NUM
+              output  the  last  NUM  bytes; or use -c +NUM to output starting with byte NUM of each file
+
+       -f, --follow[={name|descriptor}]
+              output appended data as the file grows;
+
+       -n, --lines=[+]NUM
+              output the last NUM lines, instead of the last  10;  or  use  -n +NUM to output starting with line NUM
+EXAMPLES
+       tail index.js
+       tail -n 20 index.js
+       tail -20 index.js
+       tail -f index.js
+
+
+
+head - output the first part of files
+SYNOPSIS
+       head [OPTION]... [FILE]...
+OPTIONS
+       -c, --bytes=[-]NUM
+              print the first NUM bytes of each file; with the leading '-',
+              print all but the last NUM bytes of each file
+
+       -n, --lines=[-]NUM
+              print the first NUM lines instead of  the  first  10;  with  the leading '-', print all but the last NUM lines of each file
+EXAMPLES
+       head index.js
+       head -n 20 index.js
+head -20 index.js

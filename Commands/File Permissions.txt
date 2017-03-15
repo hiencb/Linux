@@ -1,0 +1,80 @@
+Type of objects:
+■ - for files
+■ d for directories
+■ l for links
+■ c for character devices
+■ b for block devices
+■ n for network devices
+
+
+
+Access permission triplet:
+■ r for read permission for the object
+■ w for write permission for the object
+■ x for execute permission for the object
+If a permission is denied, a dash appears in the location.
+
+
+
+The three sets relate the three levels of security for the object:
+■ The owner of the object
+■ The group that owns the object
+■ Everyone else on the system
+
+
+
+Linux File Permission Codes
+Permissions 	Binary	Octal	Description
+--- 		000	0	No permissions
+--x		001	1	Execute-only permission
+-w-		010	2	Write-only permission
+-wx		011	3	Write and execute permissions
+r--		100	4	Read-only permission
+r-x		101	5	Read and execute permissions
+rw-		110	6	Read and write permissions
+rwx		111	7	Read, write, and execute permissions
+
+
+
+chmod - change file mode bits
+SYNOPSIS
+       chmod [OPTION]... MODE[,MODE]... FILE...
+       chmod [OPTION]... OCTAL-MODE FILE...
+       chmod [OPTION]... --reference=RFILE FILE...
+OPTIONS
+       -R, --recursive
+              change files and directories recursively
+EXAMPLES
+       chmod 400 test.txt; ls -l
+
+
+
+chown - change file owner and group
+SYNOPSIS
+       chown [OPTION]... [OWNER][:[GROUP]] FILE...
+       chown [OPTION]... --reference=RFILE FILE...
+OPTIONS
+       -v, --verbose
+              output a diagnostic for every file processed
+
+       -R, --recursive
+              operate on files and directories recursively
+EXAMPLES
+       sudo chown -v TestAccount test.txt; ls -l
+       sudo chown -v TestAccount:TestGroup test.txt; ls -l
+       sudo chown -v fimplus: test.txt; ls -l
+
+
+
+chgrp - change group ownership
+SYNOPSIS
+       chgrp [OPTION]... GROUP FILE...
+       chgrp [OPTION]... --reference=RFILE FILE...
+OPTIONS
+       -v, --verbose
+              output a diagnostic for every file processed
+
+       -R, --recursive
+              operate on files and directories recursively
+EXAMPLES
+       sudo chgrp -v TestGroup test.txt; ls -l

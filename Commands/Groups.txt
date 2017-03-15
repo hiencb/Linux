@@ -1,0 +1,19 @@
+groupadd - create a new group
+SYNOPSIS
+       groupadd [options] group
+EXAMPLES
+       sudo groupadd TestGroup
+
+
+
+groupmod - modify a group definition on the system
+SYNOPSIS
+       groupmod [options] GROUP
+OPTIONS
+       -g, --gid GID
+           The group ID of the given GROUP will be changed to GID.
+
+       -n, --new-name NEW_GROUP
+           The name of the group will be changed from GROUP to NEW_GROUP name.
+EXAMPLES
+       sudo groupmod -n NewTestGroup TestGroup
